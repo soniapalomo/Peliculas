@@ -1,0 +1,13 @@
+<div>
+    <label for="search-box">Buscar Películas:</label>
+    <input type="text" id="search-box" [(ngModel)]="searchText">
+    <button (click)="searchMovies()">Buscar</button>
+  </div>
+  <div *ngIf="movies">
+    <ul>
+      <li *ngFor="let movie of movies.results">
+        <a [routerLink]="['/movie', movie.id]">{{ movie.title }}</a>
+      </li>
+    </ul>
+  </div>
+  
